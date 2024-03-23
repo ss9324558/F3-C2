@@ -1,5 +1,4 @@
 
-// lif0dYtK9xpLwnIBOu9WL80rFT0Pn5oeVremXK2W
 const Title = document.querySelector(".heading");
 const img_1 = document.querySelector(".img");
 const picture_details = document.querySelector(".Para");
@@ -9,7 +8,6 @@ let arr = [];
 
 function getCurrentImageOfTheDay(){
     let date = new Date().toISOString().split("T")[0];
-    // console.log(date);
     fetch(`https://api.nasa.gov/planetary/apod?api_key=lif0dYtK9xpLwnIBOu9WL80rFT0Pn5oeVremXK2W&date=${date}`)
         .then((res) => {
             return res.json();
@@ -31,7 +29,6 @@ Btn.addEventListener("click", getImageOfTheDay);
 
 function getImageOfTheDay(){
     let newDate = search_date.value;
-    // alert(newDate);
     fetch(`https://api.nasa.gov/planetary/apod?api_key=lif0dYtK9xpLwnIBOu9WL80rFT0Pn5oeVremXK2W&date=${newDate}`)
         .then((res) => {
             return res.json();
@@ -52,9 +49,6 @@ function saveSearch(newDate){
     arr.push(newDate);
     localStorage.setItem("searches", JSON.stringify(arr));
 
-    // alert(newDate);
-    // searchResult.innerHTML += `<li><a onclick="getUserDate(${newDate})">${newDate}</a> <li>`;
-    // addSearchToHistory(newDate);
 }
 
 
